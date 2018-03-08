@@ -22,13 +22,13 @@ namespace HashlockDemo.Controllers
 
         public IActionResult Authorization(string ustreamContentType, string ustreamContentId)
         {
-            //You get type of content in ustreamContentType query parameter and ID of content in ustreamContentId query paramter
+            //You get type of content in ustreamContentType query parameter and ID of content in ustreamContentId query parameter
             //You can check in your catalog the user is logged in and has permission to wacth this content
             var isAuthorized = true;
 
             if (isAuthorized)
             { //If user is authorized redirect to hashlock pass
-                //Calculate expiration time stamp
+                //Calculate expiration timestamp
                 DateTime sTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
                 long hashExpireTimestamp = (long)(DateTime.Now - sTime).TotalSeconds + 24 * 3600;
 
