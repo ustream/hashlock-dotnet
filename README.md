@@ -4,7 +4,7 @@
 * An [IBM Cloud Video Streaming Manager for Enterprise with Authentication API account](https://www.ustream.tv/product/align-secure-streaming-video) *(You can request a Trial account [here](https://www.ustream.tv/enterprise-video/contact-internal-communications))*
 * Install [.NET Core SDK](https://www.microsoft.com/net/download)
 
-## Installion
+## Installation
 1. **Set up channel authentication** for your channel(s) on Channels/Authentication dashboard
    * Secret Key: **Some random string**, this secret key is used for signing and validating authorization data
    * URL for the entry point of the authentication flow: **http://127.0.0.1:5000/Home/Authorization** This is the end point where you can authorize your users to the content and then generate the signed hash data.
