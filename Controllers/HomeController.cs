@@ -31,7 +31,7 @@ namespace HashlockDemo.Controllers
                 int oneDayTTL = 24 * 3600;
                 // Collect data for hash
                 Hash hashData = new Hash();
-                hashData.Add("userEmail", "youruser@example.com");
+                hashData.Add("user", "youruser@example.com");
                 var json = hashData.getHash(HomeController.hashSecret, oneDayTTL); //Create signed JSON hash data
 
                 // Redirect the hashlock pass url
