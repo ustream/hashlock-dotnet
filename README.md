@@ -15,7 +15,7 @@
         private const string hashSecret = "TOPSECRET";
     ...
 ```
-3. **Set a video id** in [HomeController.cs](Controllers/HomeController.cs) which will be used in this example. (This video need to be under the same channel that was set up in Step 2.)
+3. **Set a video id** in [HomeController.cs](Controllers/HomeController.cs) which will be used in this example. (This video needs to be on the same channel that was set up in Step 2.)
 ```
     ...
         private const int videoId = 1;
@@ -28,7 +28,7 @@
 ASPNETCORE_ENVIRONMENT=Development dotnet run
 ```
 
-5. **Open demo** in your bowser: http://127.0.0.1:5000/ (Recommended to use incognito mode)
+5. **Open demo** in your browser: http://127.0.0.1:5000/ (Recommended to use incognito mode)
 
 ## Hint
 * Check how authentication/authorization works in [`HahslockDemo.Controllers.HomeController::Authorization`](Controllers/HomeController.cs)
