@@ -1,6 +1,6 @@
 using System;
 
-namespace HahslockDemo.Models
+namespace HashlockDemo.Models
 {
     public class ErrorViewModel
     {

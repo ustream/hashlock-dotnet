@@ -3,15 +3,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using HahslockDemo.Models;
+using HashlockDemo.Models;
 using Ustream;
 
-namespace HahslockDemo.Controllers
+namespace HashlockDemo.Controllers
 {
     public class HomeController : Controller
     {
         //Static configuration for demo
-        private const int videoId = 1;
+        private const int videoId = 113453109;
         private const string hashSecret = "TOPSECRET";
 
         public IActionResult Index()
