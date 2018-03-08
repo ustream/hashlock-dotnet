@@ -15,7 +15,7 @@
         private const string hashSecret = "TOPSECRET";
     ...
 ```
-3. **Set a video id** in [HomeController.cs](Controllers/HomeController.cs) which will be used in this example. (This video need to be under the same channel which was set up in Step 2.)
+3. **Set a video id** in [HomeController.cs](Controllers/HomeController.cs) which will be used in this example. (This video need to be under the same channel that was set up in Step 2.)
 ```
     ...
         private const int videoId = 1111;
