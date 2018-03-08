@@ -31,7 +31,7 @@ ASPNETCORE_ENVIRONMENT=Development dotnet run
 5. **Open demo** in your browser: http://127.0.0.1:5000/ (Recommended to use incognito mode)
 
 ## Hint
-* Check how authentication/authorization works in [`HahslockDemo.Controllers.HomeController::Authorization`](Controllers/HomeController.cs)
+* Check how authentication/authorization works in [`HashlockDemo.Controllers.HomeController::Authorization`](Controllers/HomeController.cs)
 * Check how hash data generation works in [`Ustream.Hash`](Ustream/Hash.cs)
 
 # Resources
