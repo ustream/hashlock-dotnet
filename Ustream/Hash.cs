@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.Text;
+using System.Security.Cryptography;
+using System.Linq;
+
+namespace Ustream {
+    public class Hash : Dictionary<string, string>{
+        public string getHash(string secret) {
+            string signString = concatSignData(secret);
+            string signature = md5Sing(signString);
+            this.Add("hash", signature);
+            return toJson();
+        }
+
+        private string concatSignData(string secret)
+        {
+            string sign = "";
+            foreach(KeyValuePair<string, string> data in this) {
+                sign +=  data.Value + "|";
+            }
+            sign += secret;
+
+            return sign;
+        }
+
+        private string md5Sing(string signString)
+        {
+            byte[] md5 = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(signString));
+            StringBuilder sBuilder = new StringBuilder();
+            for (int i = 0; i < md5.Length; i++)
+            {
+                sBuilder.Append(md5[i].ToString("x2"));
+            }
+            return sBuilder.ToString();
+        }
+
+        private string toJson() 
+        {
+            var hashDataList = this.Select(p => new Dictionary<string, string>() { {p.Key, p.Value }});
+            return JsonConvert.SerializeObject(hashDataList);
+        }
+    }   
+}
