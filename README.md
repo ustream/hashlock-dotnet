@@ -6,7 +6,7 @@
 
 ## Installion
 1. Setup channel authentication for your channel(s) on Channels/Authentication dashboard
-   * Secret Key: **Some random string**, this secret will used to sing and validate autorization data
+   * Secret Key: **Some random string**, this secret will used to sing and validate authorization data
    * URL to the entry point of the authentication flow: **http://127.0.0.1:5000/Home/Authorization** The end pont where you can authorize your users to the content and could generate the signed hash data
    ![Set authentication](./doc/set_authentication.png "Set authentication")
 2. Set Secret Key in [HomeController.cs](Controllers/HomeController.cs)
@@ -25,6 +25,11 @@
 ```
 dotnet run
 ```
+5. Open demo in your bowser (Recommended to test in incognito mode): http://127.0.0.1:5000/
+
+## Hint
+* Check how authentication/autherization works in [`HahslockDemo.Controllers.HomeController::Authorization`](Controllers/HomeController.cs)
+* Check how hash data generation works in [`Ustream.Hash`](Ustream/Hash.cs)
 
 # Resources
 [IBM Cloud Video Viewer Authentication API](http://developers.ustream.tv/channel-api/viewer-authentication-api.html)

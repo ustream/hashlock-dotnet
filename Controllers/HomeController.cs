@@ -25,19 +25,19 @@ namespace HahslockDemo.Controllers
         {
             //You get type of content in ustreamContentType query parameter and ID of content in ustreamContentId query paramter
             //You can check in your catalog the user is logged in and has permission to wacth this content
-            var isAuthorized = false;
+            var isAuthorized = true;
 
             if (isAuthorized)
             { //If user is authorized redirect to hashlock pass
+                //Calculate expiration time stamp
                 DateTime sTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-                long hashExpire = (long)(DateTime.Now - sTime).TotalSeconds + 24 * 3600;
+                long hashExpireTimestamp = (long)(DateTime.Now - sTime).TotalSeconds + 24 * 3600;
 
                 // Collect data for hash
                 Hash hashData = new Hash();
-                hashData.Add("userEmail", "attila.szalay@hu.ibm.con");
-                hashData.Add("hashExpire", hashExpire.ToString());
-                string secret = "authsecret123";
-                var json = hashData.getHash(secret); //Create signed JSON hash data
+                hashData.Add("userEmail", "youruser@example.com");
+                hashData.Add("hashExpire", hashExpireTimestamp.ToString());
+                var json = hashData.getHash(HomeController.hashSecret); //Create signed JSON hash data
 
                 // Redirect the hashlock pass url
                 return Redirect("https://www.ustream.tv/embed/hashlock/pass?hash=" + json);
