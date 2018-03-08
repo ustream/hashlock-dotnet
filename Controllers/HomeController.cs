@@ -11,7 +11,7 @@ namespace HashlockDemo.Controllers
     public class HomeController : Controller
     {
         //Static configuration for demo
-        private const int videoId = 113453109;
+        private const int videoId = 1;
         private const string hashSecret = "TOPSECRET";
 
         public IActionResult Index()
