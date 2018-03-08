@@ -5,27 +5,31 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Linq;
 
-namespace Ustream {
-    public class Hash : Dictionary<string, string>{
-        public string getHash(string secret) {
+namespace Ustream
+{
+    public class Hash : Dictionary<string, string>
+    {
+        public string getHash(string secret)
+        {
             string signString = concatSignData(secret);
-            string signature = md5Sing(signString);
+            string signature = md5Sign(signString);
             this.Add("hash", signature);
             return toJson();
         }
 
         private string concatSignData(string secret)
         {
-            string sign = "";
-            foreach(KeyValuePair<string, string> data in this) {
-                sign +=  data.Value + "|";
+            string signData = "";
+            foreach (KeyValuePair<string, string> data in this)
+            {
+                signData += data.Value + "|";
             }
-            sign += secret;
+            signData += secret;
 
-            return sign;
+            return signData;
         }
 
-        private string md5Sing(string signString)
+        private string md5Sign(string signString)
         {
             byte[] md5 = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(signString));
             StringBuilder sBuilder = new StringBuilder();
@@ -36,10 +40,10 @@ namespace Ustream {
             return sBuilder.ToString();
         }
 
-        private string toJson() 
+        private string toJson()
         {
-            var hashDataList = this.Select(p => new Dictionary<string, string>() { {p.Key, p.Value }});
+            var hashDataList = this.Select(p => new Dictionary<string, string>() { { p.Key, p.Value } });
             return JsonConvert.SerializeObject(hashDataList);
         }
-    }   
+    }
 }
