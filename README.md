@@ -1,6 +1,6 @@
 # IBM Cloud Video Viewer Authentication Setup Demo
 
-## Requirments
+## Requirements
 * An [IBM Cloud Video Streaming Manager for Enterprise with Authentication API account](https://www.ustream.tv/product/align-secure-streaming-video) *(You can request a Trial account [here](https://www.ustream.tv/enterprise-video/contact-internal-communications))*
 * Install [.NET Core SDK](https://www.microsoft.com/net/download)
 
