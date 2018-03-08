@@ -7,7 +7,7 @@
 ## Installion
 1. **Setup channel authentication** for your channel(s) on Channels/Authentication dashboard
    * Secret Key: **Some random string**, this secret will used to sing and validate authorization data
-   * URL to the entry point of the authentication flow: **http://127.0.0.1:5000/Home/Authorization** The end pont where you can authorize your users to the content and could generate the signed hash data
+   * URL to the entry point of the authentication flow: **http://127.0.0.1:5000/Home/Authorization** The end point where you can authorize your users to the content and generate the signed hash data
    ![Set authentication](./docs/set_authentication.png "Set authentication")
 2. **Set Secret Key** in [HomeController.cs](Controllers/HomeController.cs)
 ```
@@ -28,10 +28,10 @@
 ASPNETCORE_ENVIRONMENT=Development dotnet run
 ```
 
-5. **Open demo** in your bowser: http://127.0.0.1:5000/ (Recommended to use incognito mode)
+5. **Open demo** in your bowser: http://127.0.0.1:5000/ (It is recommended to use the browser's incognito mode)
 
 ## Hint
-* Check how authentication/autherization works in [`HahslockDemo.Controllers.HomeController::Authorization`](Controllers/HomeController.cs)
+* Check how authentication/authorization works in [`HahslockDemo.Controllers.HomeController::Authorization`](Controllers/HomeController.cs)
 * Check how hash data generation works in [`Ustream.Hash`](Ustream/Hash.cs)
 
 # Resources
