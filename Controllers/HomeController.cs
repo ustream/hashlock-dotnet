@@ -28,15 +28,11 @@ namespace HashlockDemo.Controllers
 
             if (isAuthorized)
             { //If user is authorized redirect to hashlock pass
-                //Calculate expiration timestamp
-                DateTime sTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-                long hashExpireTimestamp = (long)(DateTime.Now - sTime).TotalSeconds + 24 * 3600;
-
+                int oneDayTTL = 24 * 3600;
                 // Collect data for hash
                 Hash hashData = new Hash();
                 hashData.Add("userEmail", "youruser@example.com");
-                hashData.Add("hashExpire", hashExpireTimestamp.ToString());
-                var json = hashData.getHash(HomeController.hashSecret); //Create signed JSON hash data
+                var json = hashData.getHash(HomeController.hashSecret, oneDayTTL); //Create signed JSON hash data
 
                 // Redirect the hashlock pass url
                 return Redirect("https://www.ustream.tv/embed/hashlock/pass?hash=" + json);
